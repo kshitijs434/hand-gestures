@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>Gesture Particle Universe</title>
+
+<style>
+body {
+    margin: 0;
+    overflow: hidden;
+    background: black;
+}
+
+canvas { display: block; }
+
+#handCam {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 140px;
+    height: 100px;
+    border-radius: 12px;
+    border: 2px solid rgba(255,255,255,0.4);
+    z-index: 10;
+}
+
+#ui {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    gap: 8px;
+    z-index: 10;
+}
+
+button {
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: white;
+    padding: 8px 10px;
+    border-radius: 10px;
+    font-size: 14px;
+}
+</style>
+</head>
+
+<body>
+
+<canvas id="three-canvas"></canvas>
+<video id="handCam" autoplay muted playsinline></video>
+
+<div id="ui">
+    <button onclick="setShape('dna')">🧬</button>
+    <button onclick="setShape('birds')">🐦</button>
+    <button onclick="setShape('sphere')">🌐</button>
+    <button onclick="setShape('heart')">❤️</button>
+    <button onclick="setShape('flower')">🌸</button>
+    <button onclick="setShape('saturn')">🪐</button>
+    <button onclick="setShape('spiral')">🌀</button>
+    <button onclick="setShape('firework')">🎆</button>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.158/build/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+
+<script src="main.js"></script>
+</body>
+</html>
